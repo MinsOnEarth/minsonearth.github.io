@@ -64,11 +64,11 @@
     "linksHeading": "Elsewhere online"
   },
   "work": {
-    "kicker": "SELECTED SCHOLARSHIP",
-    "title": "Publications & conferences",
-    "intro": "Peer-reviewed work, presentations, and conversations with the research community. Add PDF files, DOI links, slides, or photographs to individual entries.",
-    "pubHeading": "Publications",
-    "confHeading": "Conferences & presentations"
+    "kicker": "",
+    "title": "Publications & Conferences",
+    "intro": "",
+    "pubHeading": "",
+    "confHeading": ""
   },
   "publications": [
     {
@@ -85,6 +85,36 @@
       "slides": "",
       "image": "",
       "tags": "Health HCI, Uncertainty, Empathy"
+    },
+    {
+      "id": "idmvphdvzcovbij",
+      "year": "2026",
+      "category": "Journal",
+      "title": "A Study on the Effectiveness of QoS Based Universal Relief Mobile Plans: An Analysis of Users’ Quality of Experience. ",
+      "authors": "Seokjoo Hong, Daeho Lee, Minseo Kim.",
+      "venue": "International Telecommunications Policy Review, 33(3), 1–34",
+      "description": "",
+      "doi": "",
+      "paper": "",
+      "code": "",
+      "slides": "",
+      "image": "",
+      "tags": "QoE, QoS, Mobile"
+    },
+    {
+      "id": "idmvphi5mhus4jq",
+      "year": "2026",
+      "category": "Manuscript in Preparation",
+      "title": "Fear Anchoring in AI-assisted Symptom Assessment",
+      "authors": "Minseo Kim, Daeho Lee",
+      "venue": "Journal",
+      "description": "Master’s thesis in progress",
+      "doi": "",
+      "paper": "",
+      "code": "",
+      "slides": "",
+      "image": "",
+      "tags": ""
     }
   ],
   "conferences": [
@@ -101,10 +131,10 @@
     },
     {
       "id": "conf-hc",
-      "year": "",
+      "year": "2026",
       "event": "Annual Conference of the Association for Health Communication",
       "role": "Conference presentation",
-      "location": "",
+      "location": "Chuncheon, Korea",
       "description": "Communication Strategies for Diagnostic Uncertainty in AI-Based Medical Consultation Systems",
       "link": "",
       "slides": "",
@@ -112,11 +142,22 @@
     },
     {
       "id": "conf-cyber",
-      "year": "",
+      "year": "2026",
       "event": "Annual Conference of the Association for Cyber-communication Studies",
       "role": "Conference presentation",
-      "location": "",
+      "location": "Gyeongju, Korea ",
       "description": "Mitigating Fear Anchoring in AI-Assisted Initial Symptom Assessment",
+      "link": "",
+      "slides": "",
+      "image": ""
+    },
+    {
+      "id": "idmvphg1c73n2ul",
+      "year": "2025",
+      "event": "Annual Conference of the Korean Society for Journalism Studies",
+      "role": "Presenter",
+      "location": "Gwangmyeong, Korea",
+      "description": "The Effects of Affective AI Communication on Older Adults",
       "link": "",
       "slides": "",
       "image": ""
