@@ -11,3 +11,6 @@
 .cms-can-edit [data-cms-key]{cursor:text;outline:1.5px dashed #b38e66!important;outline-offset:4px;transition:background .15s,outline .15s}.cms-can-edit [data-cms-key]:hover{background:#efcf892f!important;outline:2px dashed #aa7356!important}.cms-can-edit [data-cms-key]:focus,.cms-can-edit [data-cms-key].cms-currently-editing{background:#f1dcbf50!important;outline:2px solid #9d5c46!important;outline-offset:5px}.cms-can-edit .page-cover [data-cms-key]:focus{background:#ffffff20!important}
 @media(max-width:650px){.cms-admin{right:11px;bottom:10px}.cms-panel{max-height:65vh}.cms-launch{padding:8px 12px}.cms-admin .cms-panel{padding:16px 18px}}
 @media print{.cms-admin{display:none!important}.cms-can-edit [data-cms-key]{outline:none!important}}
+
+/* Full-copy editor tools: form controls and panel-only labels. */
+.cms-panel select{width:100%;border:1px solid #d6d4ca;border-radius:4px;background:white;color:#264037;font-size:11px;padding:7px;line-height:1.55;min-height:125px}.cms-panel select option{padding:5px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cms-cv-open{text-decoration:none;text-align:center}.cms-can-edit [data-cms-mode="panel"]{outline:1px dotted #baa68b!important;outline-offset:2px;cursor:default}.cms-can-edit a [data-cms-mode="panel"],.cms-can-edit button [data-cms-mode="panel"]{cursor:pointer}

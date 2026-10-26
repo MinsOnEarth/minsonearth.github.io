@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const chapterNames = ['Cover', 'A Little About Me', 'Research Questions', 'Selected Projects', 'Writing & Work', 'Field Notes', 'Stay in Touch'];
+  let chapterNames = ['Cover', 'A Little About Me', 'Research Questions', 'Selected Projects', 'Writing & Work', 'Field Notes', 'Stay in Touch'];
   const sections = [...document.querySelectorAll('.chapter')];
   const tocItems = [...document.querySelectorAll('.toc-item')];
   const pageDots = [...document.querySelectorAll('.page-dot')];
@@ -114,6 +114,10 @@
     const bookmark = getBookmark();
     if (Number.isInteger(bookmark)) { showPage(bookmark); closeMenu(); }
   });
+  document.addEventListener('cms:updated', ()=>{
+    if (document.querySelector('.toc-text')){chapterNames=[...document.querySelectorAll('.toc-text')].map(e=>e.textContent.trim());updateControls();}
+    renderDemo();
+  });
   const readerMode = document.getElementById('readerMode');
   readerMode.addEventListener('click', () => {
     const active = document.body.classList.toggle('focus-mode');
@@ -127,10 +131,12 @@
   const cueButtons = [...document.querySelectorAll('[data-cue]')];
   let advisor = 'ai'; let cue = 'off';
   function renderDemo() {
-    document.getElementById('chatAdvisor').textContent = advisor === 'ai' ? 'AI health advisor' : 'Human doctor';
-    let text = 'Thanks for explaining. Could you tell me when the discomfort started and how often it occurs?';
-    if (cue === 'on') text = 'You mentioned being 25 and spending much of your day seated. When did the upper abdominal discomfort begin, and how often do you feel it?';
-    document.getElementById('chatMessage').textContent = text;
+    const demo=window.researchCMS?.get()?.demo || {};
+    const label=advisor==='ai' ? demo.advisorAI||'AI health advisor' : demo.advisorHuman||'Human doctor';
+    const key=advisor==='ai'?(cue==='on'?'aiCue':'aiNoCue'):(cue==='on'?'humanCue':'humanNoCue');
+    const fallback=cue==='on' ? 'You mentioned being 25 and spending much of your day seated. When did the upper abdominal discomfort begin, and how often do you feel it?' : 'Thanks for explaining. Could you tell me when the discomfort started and how often it occurs?';
+    document.getElementById('chatAdvisor').textContent=label;
+    document.getElementById('chatMessage').textContent=demo[key]||fallback;
     advisorButtons.forEach(button => { const selected = button.dataset.advisor === advisor; button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected)); });
     cueButtons.forEach(button => { const selected = button.dataset.cue === cue; button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected)); });
   }

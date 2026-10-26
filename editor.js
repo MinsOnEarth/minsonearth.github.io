@@ -27,7 +27,7 @@ async function init(){
  <section class="cms-panel" id="cmsPanel" aria-label="홈페이지 편집 도구">
   <div class="cms-panel-header"><span>THE EDITOR'S DESK <b>✳</b></span><a href="./" target="_blank" rel="noopener noreferrer">방문자 화면 ↗</a></div>
   <div class="cms-headline">내 연구 노트<br/><em>직접 고치기.</em></div>
-  <p class="cms-panel-info">연결하면 책 안의 글을 클릭해 바로 수정할 수 있어요. 코드를 수정할 필요가 없습니다.</p>
+  <p class="cms-panel-info">본문을 클릭하거나 ‘모든 문구’에서 목차·버튼·캡션까지 수정할 수 있어요. CV는 별도 편집 페이지에서 수정해요.</p>
   <div id="cmsLogin">
    <label>GitHub 사용자명<input id="cmsOwner" autocomplete="off" placeholder="your-username"></label>
    <label>저장소 이름<input id="cmsRepo" autocomplete="off" placeholder="your-username.github.io"></label>
@@ -38,11 +38,25 @@ async function init(){
   </div>
   <div id="cmsConnected" hidden>
     <div class="cms-status-line"><span class="cms-led"></span><span id="cmsLinkedRepo"></span><button id="cmsDisconnect" type="button">연결 해제</button></div>
-    <div class="cms-tabs" role="tablist" aria-label="편집 메뉴"><button type="button" class="active" data-cms-tab="text">✎ 글</button><button type="button" data-cms-tab="records">＋ 프로젝트·논문</button><button type="button" data-cms-tab="media">▧ 사진·CV</button></div>
+    <div class="cms-tabs" role="tablist" aria-label="편집 메뉴"><button type="button" class="active" data-cms-tab="text">✎ 글</button><button type="button" data-cms-tab="all">모든 문구</button><button type="button" data-cms-tab="records">＋ 연구실적</button><button type="button" data-cms-tab="demo">대화 예시</button><button type="button" data-cms-tab="media">▧ 사진·CV</button></div>
     <div class="cms-pane" data-cms-pane="text">
       <p class="cms-instruction">① 왼쪽 목차에서 챕터를 선택<br>② 책 안의 <b>점선 테두리 글</b>을 클릭하고 직접 타이핑<br>③ 아래 <b>변경 내용 게시하기</b> 클릭</p>
       <div class="cms-selected"><span>선택한 문장</span><div id="cmsSelection">아직 선택하지 않았어요.<br>본문의 제목이나 설명을 클릭해 보세요.</div></div>
       <div class="cms-format-guide">제목의 <em>기울임</em>, 줄바꿈 등 서식은 유지할 수 있어요. 붙여넣기는 일반 텍스트로 처리됩니다.</div>
+    </div>
+    <div class="cms-pane" data-cms-pane="all" hidden>
+      <p class="cms-instruction">제목·목차·버튼·작은 캡션까지 목록에서 선택해 수정할 수 있어요. <b>문구 수정 적용</b> 후 마지막에 <b>게시</b>하세요.</p>
+      <label>문구 검색<input type="search" id="cmsFieldSearch" placeholder="e.g. Chapter, Cover, Notes, Minseo"></label>
+      <label>편집할 문구<select id="cmsFieldSelect" size="7" aria-label="홈페이지 문구 목록"></select></label>
+      <label>내용 (강조: &lt;em&gt;, 줄바꿈: &lt;br&gt;)<textarea id="cmsFieldValue" rows="5" spellcheck="true"></textarea></label>
+      <button type="button" id="cmsFieldApply" class="cms-secondary">✓ 이 문구 수정 적용</button>
+      <p id="cmsFieldCounter" class="cms-hint"></p>
+      <div class="cms-subhead">링크 주소 수정</div>
+      <label>대학교 홈페이지 URL<input id="cmsInstitutionUrl" placeholder="https://www.skku.edu/eng/"></label>
+      <button type="button" id="cmsLinksApply" class="cms-secondary">✓ 링크 수정 적용</button>
+      <div class="cms-subhead">CV 웹페이지 편집</div>
+      <p class="cms-hint">본문의 CV 링크가 여는 별도 웹페이지도 이 에디터에서 수정할 수 있어요.</p>
+      <a class="cms-secondary cms-cv-open" href="cv.html?edit=1" target="_blank" rel="noopener noreferrer">CV 편집 페이지 열기 ↗</a>
     </div>
     <div class="cms-pane" data-cms-pane="records" hidden>
       <div class="cms-subhead">새 프로젝트 추가</div>
@@ -60,6 +74,16 @@ async function init(){
       <label>논문 링크 (선택)<input id="cmsPubUrl" placeholder="https://..."></label>
       <button id="cmsPubAdd" type="button" class="cms-secondary">+ 논문 목록에 추가</button>
       <div class="cms-records" id="cmsPubList"></div>
+    </div>
+    <div class="cms-pane" data-cms-pane="demo" hidden>
+      <p class="cms-instruction">Chapter 02의 인터랙티브 시연 문구를 AI/Human × Cue 유무별로 수정할 수 있어요. 실제 실험 자극물과는 별개입니다.</p>
+      <label>AI 소개 이름<input id="cmsDemoAdvisorAI"></label>
+      <label>Human 소개 이름<input id="cmsDemoAdvisorHuman"></label>
+      <label>AI × Cue 없음<textarea id="cmsDemoAiNoCue" rows="3"></textarea></label>
+      <label>AI × Cue 있음<textarea id="cmsDemoAiCue" rows="3"></textarea></label>
+      <label>Human × Cue 없음<textarea id="cmsDemoHumanNoCue" rows="3"></textarea></label>
+      <label>Human × Cue 있음<textarea id="cmsDemoHumanCue" rows="3"></textarea></label>
+      <button type="button" id="cmsDemoApply" class="cms-secondary">✓ 대화 문구 수정 적용</button>
     </div>
     <div class="cms-pane" data-cms-pane="media" hidden>
       <div class="cms-subhead">프로필 사진 바꾸기</div>
@@ -166,10 +190,12 @@ async function init(){
      $('cmsToken').value='';
      document.body.classList.add('cms-can-edit');
      document.querySelectorAll('[data-cms-key]').forEach(el=>{
+       if(el.dataset.cmsMode==='panel')return;
+       if(el.closest('button, a'))return;
        el.contentEditable='true';el.spellcheck=true;el.setAttribute('tabindex','0');
        el.setAttribute('title','클릭해서 글을 수정하세요');
      });
-     updateDirty();renderLists();
+     updateDirty();renderLists();renderFieldList();populateExtras();
      status('연결되었습니다. 책 안의 글을 클릭해 수정하세요.','success');
    } catch(e){ token='';sha=null;status(`연결 실패: ${e.message}`,'error'); }
    finally{$('cmsConnect').disabled=false;}
@@ -187,7 +213,7 @@ async function init(){
  function updateText(e){
    if(!connected)return;
    const el=e.target.closest('[data-cms-key]');
-   if(!el)return;
+   if(!el||el.dataset.cmsMode==='panel')return;
    draft.fields[el.dataset.cmsKey]=window.researchCMS.safeInline(el.innerHTML);
    updateDirty();
  }
@@ -207,7 +233,7 @@ async function init(){
  document.addEventListener('focusout',e=>{
    if(!connected)return;
    const el=e.target.closest('[data-cms-key]');
-   if(!el)return;
+   if(!el||el.dataset.cmsMode==='panel')return;
    const key=el.dataset.cmsKey;
    const sanitized=window.researchCMS.safeInline(el.innerHTML);
    el.innerHTML=sanitized;
@@ -223,8 +249,64 @@ async function init(){
    const node=document.createTextNode(s);range.insertNode(node);range.setStartAfter(node);range.collapse(true);sel.removeAllRanges();sel.addRange(range);
    updateText(e);
  });
+ const defaults={};
+ document.querySelectorAll('[data-cms-key]').forEach(el=>{defaults[el.dataset.cmsKey]={preview:el.textContent.trim().replace(/\s+/g,' ').slice(0,90),chapter:el.closest('[data-page]')?.dataset.page??(location.pathname.endsWith('cv.html')?'CV':'General')};});
+ const fieldLabels=()=>Object.keys(defaults).sort((a,b)=>{
+   const A=defaults[a]?.chapter??'zz',B=defaults[b]?.chapter??'zz';
+   return String(A).localeCompare(String(B),undefined,{numeric:true}) || a.localeCompare(b,undefined,{numeric:true});
+ });
+ function renderFieldList(){
+    const select=$('cmsFieldSelect'),previous=select.value,query=$('cmsFieldSearch').value.toLocaleLowerCase().trim();
+    select.replaceChildren();
+    const keys=fieldLabels().filter(key=>{
+      const txt=(draft.fields[key]||defaults[key]?.preview||'').replace(/<[^>]*>/g,' ');
+      return !query||(`${key} ${txt} ${defaults[key]?.preview||''}`).toLocaleLowerCase().includes(query);
+    });
+    for(const key of keys){
+      const label=defaults[key]?.preview||key;
+      const option=h('option',{value:key},`[${defaults[key]?.chapter??'기타'}] ${label.slice(0,64)}`);
+      select.add(option);
+    }
+    if(keys.includes(previous))select.value=previous;
+    else if(keys.length)select.value=keys[0];
+    $('cmsFieldCounter').textContent=`현재 화면 문구 ${keys.length}개 / 전체 ${fieldLabels().length}개 · CV는 별도 편집 페이지에서 수정하세요.`;
+    fillSelectedField();
+ }
+ function fillSelectedField(){
+    const key=$('cmsFieldSelect').value;
+    $('cmsFieldValue').value=key?(draft.fields[key]||''):'';
+    $('cmsFieldValue').disabled=!key;$('cmsFieldApply').disabled=!key;
+ }
+ $('cmsFieldSearch').addEventListener('input',renderFieldList);
+ $('cmsFieldSelect').addEventListener('change',fillSelectedField);
+ btn('cmsFieldApply',()=>{
+    const key=$('cmsFieldSelect').value;if(!key)return;
+    const raw=$('cmsFieldValue').value;
+    if(raw.length>15000){status('문구는 15,000자 이하로 줄여 주세요.','error');return;}
+    const cleaned=window.researchCMS.safeInline(raw);
+    draft.fields[key]=cleaned;
+    window.researchCMS.apply(draft);
+    updateDirty();renderFieldList();$('cmsFieldSelect').value=key;fillSelectedField();
+    status('문구가 미리보기에 적용됐어요. 마지막에 게시 버튼을 눌러주세요.','success');
+ });
+ function populateExtras(){
+   $('cmsInstitutionUrl').value=draft.links?.institutionUrl||'https://www.skku.edu/eng/';
+   const names={advisorAI:'cmsDemoAdvisorAI',advisorHuman:'cmsDemoAdvisorHuman',aiNoCue:'cmsDemoAiNoCue',aiCue:'cmsDemoAiCue',humanNoCue:'cmsDemoHumanNoCue',humanCue:'cmsDemoHumanCue'};
+   for(const [name,id] of Object.entries(names))$(id).value=draft.demo?.[name]||'';
+ }
+ btn('cmsLinksApply',()=>{
+   const value=$('cmsInstitutionUrl').value.trim();
+   if(value&&!allowedUrl(value)){status('링크는 https:// 또는 http:// 로 시작해야 해요.','error');return;}
+   draft.links={...draft.links,institutionUrl:value};window.researchCMS.apply(draft);updateDirty();status('링크가 반영됐어요. 게시까지 눌러 주세요.','success');
+ });
+ btn('cmsDemoApply',()=>{
+   const names={advisorAI:'cmsDemoAdvisorAI',advisorHuman:'cmsDemoAdvisorHuman',aiNoCue:'cmsDemoAiNoCue',aiCue:'cmsDemoAiCue',humanNoCue:'cmsDemoHumanNoCue',humanCue:'cmsDemoHumanCue'};
+   const next={...draft.demo};for(const [k,id] of Object.entries(names))next[k]=$(id).value.trim().slice(0,1600);
+   draft.demo=next;window.researchCMS.apply(draft);updateDirty();status('시연 문구가 적용됐어요. 게시까지 눌러 주세요.','success');
+ });
  shell.querySelectorAll('[data-cms-tab]').forEach(b=>b.addEventListener('click',()=>{
    activeTab=b.dataset.cmsTab;
+   if(activeTab==='all')renderFieldList();
    shell.querySelectorAll('[data-cms-tab]').forEach(el=>el.classList.toggle('active',el===b));
    shell.querySelectorAll('[data-cms-pane]').forEach(el=>el.hidden=el.dataset.cmsPane!==activeTab);
  }));

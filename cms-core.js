@@ -1,20 +1,24 @@
 /* Public content renderer — no credentials or private information. */
 (() => {
   'use strict';
-  const initial = {version: 1, fields: {}, projects: [], publications: [], profileImage: '', cvPdf: ''};
+  const initial = {version: 1, fields: {}, projects: [], publications: [], profileImage: '', cvPdf: '', demo: {}, links: {}};
   let model = structuredClone(initial);
   const clean = (value) => typeof value === 'string' ? value : '';
   // Preserve only basic inline formatting so CMS content cannot execute HTML or JS.
   function safeInline(input) {
     const tmp = document.createElement('template');
     tmp.innerHTML = clean(input);
-    const allow = new Set(['EM', 'STRONG', 'B', 'I', 'BR']);
+    const allow = new Set(['EM', 'STRONG', 'B', 'I', 'BR', 'SPAN']);
     function scrub(node) {
       if (node.nodeType === Node.TEXT_NODE) return document.createTextNode(node.textContent);
       const out = document.createDocumentFragment();
       if (node.nodeType !== Node.ELEMENT_NODE) return out;
       const safe = allow.has(node.tagName);
       const element = safe ? document.createElement(node.tagName.toLowerCase()) : out;
+      if (safe && node.tagName === 'SPAN') {
+        const cls=(node.getAttribute('class')||'').split(/\s+/).filter(v=>['edition-dot','kicker-line','status-dash','signature-rule','portrait-dot'].includes(v));
+        if(cls.length)element.className=cls.join(' ');
+      }
       if (node.tagName === 'BR') return element;
       node.childNodes.forEach(child => element.appendChild(scrub(child)));
       if (['DIV', 'P'].includes(node.tagName)) element.appendChild(document.createElement('br'));
@@ -71,7 +75,9 @@
       projects: Array.isArray(safe.projects)?safe.projects:[],
       publications:Array.isArray(safe.publications)?safe.publications:[],
       profileImage: safeLocalAsset(safe.profileImage,'image'),
-      cvPdf: safeLocalAsset(safe.cvPdf,'cv')
+      cvPdf: safeLocalAsset(safe.cvPdf,'cv'),
+      demo: (safe.demo && typeof safe.demo === 'object' && !Array.isArray(safe.demo)) ? {...safe.demo} : {},
+      links: (safe.links && typeof safe.links === 'object' && !Array.isArray(safe.links)) ? {...safe.links} : {}
     };
     document.querySelectorAll('[data-cms-key]').forEach(el => {
       const value = model.fields[el.dataset.cmsKey];
@@ -84,6 +90,10 @@
       photo.classList.toggle('cms-has-image',Boolean(model.profileImage));
       if(model.profileImage){const img=document.createElement('img');img.src=model.profileImage;img.alt='Portrait of Minseo Kim';img.className='cms-profile-image';photo.appendChild(img);}
     }
+    document.querySelectorAll('[data-cms-href]').forEach(a=>{
+      const proposed=safeLink(model.links[a.dataset.cmsHref]);
+      if(proposed)a.href=proposed;
+    });
     const email = document.querySelector('.email-address');
     if (email) {
       const value=email.textContent.trim();
@@ -93,6 +103,8 @@
     }
     const cv=document.querySelector('a[href="cv.html"], a[data-cms-cv-link]');
     if(cv){cv.href=model.cvPdf||'cv.html';cv.dataset.cmsCvLink='true';}
+    const cvEmail=document.querySelector('header a[href^="mailto:"]');
+    if(cvEmail && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(cvEmail.textContent.trim()))cvEmail.href='mailto:'+cvEmail.textContent.trim();
     renderAdded();
     document.dispatchEvent(new CustomEvent('cms:updated',{detail:model}));
   }
