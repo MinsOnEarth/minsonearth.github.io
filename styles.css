@@ -20,3 +20,23 @@ body.is-preview [data-field]{cursor:pointer;outline:1px dashed transparent;outli
 @keyframes appear{from{opacity:.2;transform:translateY(9px)}to{opacity:1;transform:none}}@media(max-width:1000px){.about-hero{gap:30px}.career-grid{grid-template-columns:330px 1fr;gap:30px}.project-card{grid-template-columns:40px 1fr 175px}.primary-nav{gap:1px}.nav-link{padding:8px}}@media(max-width:780px){.announcement-end{display:none}.nav-wrap{height:auto;min-height:70px;flex-wrap:wrap;gap:0;padding:7px 18px 0}.brand{font-size:26px}.primary-nav{order:3;flex:1 0 100%;overflow-x:auto;padding:5px 0 9px;scrollbar-width:none}.primary-nav::-webkit-scrollbar{display:none}.nav-link{white-space:nowrap;padding:9px 10px}.nav-actions{margin-left:auto}.progress-line{top:110px}.main-frame{padding:28px 20px 65px}.about-hero{grid-template-columns:1fr;gap:25px;padding:8px 0 37px}.hero-side{display:grid;grid-template-columns:1fr 1fr;gap:13px}.photo-block{height:250px}.profile-summary{padding:12px}.profile-row{display:block}.profile-value{text-align:left;max-width:none;margin-top:3px}.under-hero{grid-template-columns:1fr;gap:34px}.career-grid{grid-template-columns:1fr;gap:5px}.project-card{grid-template-columns:34px 1fr;gap:15px}.project-visual{grid-column:2;max-width:330px}.future-list{grid-template-columns:1fr}.future-card{min-height:auto}.hobby-grid{grid-template-columns:1fr 1fr}.contact-card{padding:23px}.section-intro{padding-top:10px}.footer-inner{display:block}.footer-right{margin-top:8px}}@media(max-width:520px){.hero-side,.hobby-grid{grid-template-columns:1fr}.photo-block{height:260px}.hello{font-size:59px}.paper-card{grid-template-columns:48px minmax(0,1fr);gap:13px}.paper-thumbnail-empty,.paper-thumb{display:none}.conference-item{grid-template-columns:44px 1fr;gap:10px}.conf-links{grid-column:2}.contact-card{display:block}.contact-card .button-primary{margin-top:18px}.page-bottom{margin-top:40px}.section-title{font-size:35px}.nav-actions .say-hi{padding:9px 11px;font-size:10px}}
 
 .paper-tags{font-size:10px;color:#7e9986;margin-top:9px;letter-spacing:.04em}.awards-img,.exp-img{width:115px;height:72px;object-fit:cover;border:1px solid var(--line);border-radius:4px;margin-top:9px}
+/* v4 — Education affiliations and modular CV / page sections */
+.edu-research-info{margin-top:10px;padding:11px 13px;border-left:2px solid #aecbb9;background:#f5f8f3;display:grid;gap:8px}
+.edu-research-info>div{display:grid;grid-template-columns:90px minmax(0,1fr);align-items:baseline;gap:10px;font-size:12px;color:#405e4e;line-height:1.55}
+.edu-research-info b{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#789080}
+.custom-sections{padding-top:30px;margin-top:28px;border-top:1px solid var(--line)}
+.custom-sections.cv-sections{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 55px;padding-top:0;margin-top:0;border:0;align-items:start}
+.managed-section-public{min-width:0;margin-bottom:16px;break-inside:avoid}
+.managed-section-public .panel-heading{padding-top:18px}
+.managed-section-public .panel-heading h2{font-size:23px;line-height:1.25}
+.managed-section-intro{font-size:12px;color:#6f8278;margin:0 0 16px;line-height:1.7}
+.managed-item{display:grid;grid-template-columns:85px minmax(0,1fr) auto;gap:14px;padding:15px 0;border-top:1px solid var(--line);min-width:0}
+.managed-item-time{font-size:11px;color:#698874;font-weight:730;line-height:1.6}
+.managed-item-title{font-size:14px;line-height:1.45;margin:0;font-weight:740;color:#253b31}
+.managed-item-org{font-size:12px;color:#74837a;margin-top:4px;line-height:1.5}
+.managed-item-desc{font-size:12px;color:#68776e;margin:8px 0 0;line-height:1.65;white-space:pre-line}
+.managed-item-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.managed-item-image{width:70px;height:57px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+.cv-sections .managed-item{grid-template-columns:70px minmax(0,1fr) auto;gap:10px}
+@media(max-width:950px){.custom-sections.cv-sections{grid-template-columns:1fr;gap:4px}}
+@media(max-width:520px){.managed-item,.cv-sections .managed-item{grid-template-columns:55px minmax(0,1fr);gap:9px}.managed-item-image{grid-column:2}.edu-research-info>div{grid-template-columns:1fr;gap:2px}}

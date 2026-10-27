@@ -44,14 +44,18 @@ window.SITE_FALLBACK = {
         "degree": "M.S., Applied Artificial Intelligence",
         "institution": "Sungkyunkwan University",
         "period": "2025 – 2027 (expected)",
-        "detail": "DEHUB · Advisor: Prof. Daeho Lee"
+        "detail": "",
+        "lab": "Digital Environment and Human Behavior Lab (DEHUB)",
+        "advisor": "Prof. Daeho Lee"
       },
       {
         "id": "edu2",
         "degree": "B.A., Information Convergence (Data Science)",
         "institution": "Kwangwoon University",
         "period": "2020 – 2025",
-        "detail": "Data Science major"
+        "detail": "Data Science major",
+        "lab": "",
+        "advisor": ""
       }
     ],
     "links": [
@@ -356,5 +360,191 @@ window.SITE_FALLBACK = {
     "pageNext": "Next page",
     "emailButton": "Send an email",
     "noEmailMessage": "Add your email address in the editor."
+  },
+  "pageSections": {
+    "about": [],
+    "work": [],
+    "career": [
+      {
+        "id": "cv-awards",
+        "title": "Selected Awards",
+        "intro": "",
+        "visible": true,
+        "entries": [
+          {
+            "id": "cv-aw1",
+            "period": "2026",
+            "title": "Grand Prize / 1st Place",
+            "organization": "High North Dialogue Academy",
+            "description": "",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-aw2",
+            "period": "2024",
+            "title": "Excellence Award",
+            "organization": "KMI",
+            "description": "",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-aw3",
+            "period": "2024",
+            "title": "1st Place, Graduation Exhibition",
+            "organization": "Kwangwoon University",
+            "description": "AI-powered pronunciation-feedback web project",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-aw4",
+            "period": "2021",
+            "title": "Excellence Award",
+            "organization": "COSS",
+            "description": "",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          }
+        ]
+      },
+      {
+        "id": "cv-research",
+        "title": "Research & Industry Experience",
+        "intro": "",
+        "visible": true,
+        "entries": [
+          {
+            "id": "cv-ex1",
+            "period": "2025 – Present",
+            "title": "Graduate Researcher",
+            "organization": "DEHUB · Sungkyunkwan University",
+            "description": "Experimental research on conversational AI, diagnostic uncertainty, trust, and decision-making in digital health.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-ex2",
+            "period": "2022 – 2023",
+            "title": "Research Intern",
+            "organization": "LIG Nex1",
+            "description": "Experience in AI and technology development in a defense-domain setting.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-ex3",
+            "period": "2024",
+            "title": "Software Developer Intern",
+            "organization": "Logistics technology company",
+            "description": "Web/software development experience.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          }
+        ]
+      },
+      {
+        "id": "cv-teaching",
+        "title": "Teaching Experience",
+        "intro": "",
+        "visible": true,
+        "entries": [
+          {
+            "id": "cv-ex4",
+            "period": "2025 – Present",
+            "title": "Graduate Teaching Assistant",
+            "organization": "Sungkyunkwan University",
+            "description": "Graduate-level teaching assistance.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          }
+        ]
+      },
+      {
+        "id": "cv-scholarships",
+        "title": "Scholarships",
+        "intro": "",
+        "visible": true,
+        "entries": []
+      },
+      {
+        "id": "cv-volunteer",
+        "title": "Volunteer Experience",
+        "intro": "",
+        "visible": true,
+        "entries": [
+          {
+            "id": "cv-other1",
+            "period": "3 years",
+            "title": "Volunteer Coding Instructor",
+            "organization": "Korea Cancer Center Hospital School",
+            "description": "Taught coding to young patients continuing their education during cancer treatment.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          }
+        ]
+      },
+      {
+        "id": "cv-licenses",
+        "title": "Licenses & Certificates",
+        "intro": "",
+        "visible": true,
+        "entries": []
+      },
+      {
+        "id": "cv-skills",
+        "title": "Technical Skills",
+        "intro": "",
+        "visible": true,
+        "entries": []
+      },
+      {
+        "id": "cv-leadership",
+        "title": "Leadership Activities",
+        "intro": "",
+        "visible": true,
+        "entries": [
+          {
+            "id": "cv-other2",
+            "period": "",
+            "title": "Editor-in-Chief",
+            "organization": "Kwangwoon English Newspaper",
+            "description": "Editorial leadership and student journalism.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          },
+          {
+            "id": "cv-other3",
+            "period": "",
+            "title": "Vice President",
+            "organization": "University Student Club Federation",
+            "description": "Student community leadership.",
+            "link": "",
+            "image": "",
+            "attachment": ""
+          }
+        ]
+      },
+      {
+        "id": "cv-honors",
+        "title": "Selected Honors",
+        "intro": "",
+        "visible": true,
+        "entries": []
+      }
+    ],
+    "research": [],
+    "personal": []
   }
 };
