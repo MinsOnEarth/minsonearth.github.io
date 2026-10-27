@@ -19,8 +19,8 @@
     "subtitle": "Researcher in Human–AI Interaction & Health Communication",
     "affiliation": "M.S. Student · Applied Artificial Intelligence",
     "university": "Sungkyunkwan University (SKKU)",
-    "lab": "Digital Environment and Human Behavior Lab (DEHUB)",
-    "advisor": "Advised by Prof. Daeho Lee",
+    "lab": "",
+    "advisor": "",
     "location": "Seoul, South Korea",
     "motto": "Make technology more human, especially when it matters most.",
     "intro": "I study how people interpret, trust, and make decisions with AI—especially in health contexts where uncertainty, emotion, and communication shape real choices.",
@@ -28,7 +28,7 @@
     "notice": "Currently exploring Ph.D. opportunities for Fall 2027.",
     "portrait": "",
     "cv": "",
-    "email": "",
+    "email": "minsonearth@gmail.com",
     "educationHeading": "Education",
     "interestsHeading": "Research interests",
     "interests": [
@@ -44,7 +44,7 @@
         "degree": "M.S., Applied Artificial Intelligence",
         "institution": "Sungkyunkwan University",
         "period": "2025 – 2027 (expected)",
-        "detail": "DEHUB · Advisor: Prof. Daeho Lee"
+        "detail": ""
       },
       {
         "id": "edu2",
