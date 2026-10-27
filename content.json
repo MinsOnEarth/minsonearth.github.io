@@ -178,7 +178,7 @@
       "title": "Grand Prize / 1st Place",
       "organization": "High North Dialogue Academy",
       "detail": "",
-      "link": "",
+      "link": "https://www.highnorthdialogue.no/",
       "image": ""
     },
     {
@@ -186,8 +186,8 @@
       "year": "2024",
       "title": "Excellence Award",
       "organization": "KMI",
-      "detail": "",
-      "link": "",
+      "detail": "Korea Maritime Institute, Arctic Academy 2024",
+      "link": "https://www.kmi.re.kr/web/main/main.do?rbsIdx=1",
       "image": ""
     },
     {
@@ -204,7 +204,16 @@
       "year": "2021",
       "title": "Excellence Award",
       "organization": "COSS",
-      "detail": "",
+      "detail": "Digital Innovation Shared University Program (COSS)",
+      "link": "",
+      "image": ""
+    },
+    {
+      "id": "idmvqjeavoc4s2f",
+      "year": "2020",
+      "title": "Creativity Award (3rd Place)",
+      "organization": "Kwangwoon University",
+      "detail": "Introductory Engineering Design Competition",
       "link": "",
       "image": ""
     }
@@ -212,7 +221,7 @@
   "experience": [
     {
       "id": "ex1",
-      "period": "2025 – Present",
+      "period": "2025.03 – 2027.02",
       "role": "Graduate Researcher",
       "organization": "DEHUB · Sungkyunkwan University",
       "category": "Research",
@@ -247,16 +256,6 @@
       "organization": "Sungkyunkwan University",
       "category": "Teaching",
       "description": "Graduate-level teaching assistance.",
-      "link": "",
-      "image": ""
-    },
-    {
-      "id": "idmvqgkoe97lax6",
-      "period": "2026 – Present",
-      "role": "New position",
-      "organization": "",
-      "category": "Research",
-      "description": "",
       "link": "",
       "image": ""
     }
