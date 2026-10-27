@@ -165,7 +165,7 @@
   ],
   "career": {
     "kicker": "A LITTLE MORE ABOUT MY PATH",
-    "title": "Experience & recognition",
+    "title": "Experience & Recognition",
     "intro": "Research, practical experience, service, and the communities that shaped the way I work.",
     "awardsHeading": "Selected awards",
     "experienceHeading": "Research & industry experience",
@@ -227,7 +227,7 @@
       "organization": "LIG Nex1",
       "category": "Internship",
       "description": "Experience in AI and technology development in a defense-domain setting.",
-      "link": "",
+      "link": "https://www.ligdefenseaerospace.com/main.do",
       "image": ""
     },
     {
@@ -236,17 +236,27 @@
       "role": "Software Developer Intern",
       "organization": "Logistics technology company",
       "category": "Internship",
-      "description": "Web/software development experience.",
+      "description": "Web/software development experience, PHP and Python",
       "link": "",
       "image": ""
     },
     {
       "id": "ex4",
-      "period": "2025 – Present",
+      "period": "2025",
       "role": "Graduate Teaching Assistant",
       "organization": "Sungkyunkwan University",
       "category": "Teaching",
       "description": "Graduate-level teaching assistance.",
+      "link": "",
+      "image": ""
+    },
+    {
+      "id": "idmvqgkoe97lax6",
+      "period": "2026 – Present",
+      "role": "New position",
+      "organization": "",
+      "category": "Research",
+      "description": "",
       "link": "",
       "image": ""
     }
@@ -263,7 +273,7 @@
     },
     {
       "id": "other2",
-      "period": "",
+      "period": "2020-2023",
       "title": "Editor-in-Chief",
       "organization": "Kwangwoon English Newspaper",
       "description": "Editorial leadership and student journalism.",
@@ -272,7 +282,7 @@
     },
     {
       "id": "other3",
-      "period": "",
+      "period": "2023",
       "title": "Vice President",
       "organization": "University Student Club Federation",
       "description": "Student community leadership.",
