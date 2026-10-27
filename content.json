@@ -354,7 +354,7 @@
   "personal": {
     "kicker": "OUTSIDE THE LAB",
     "title": "A few things I love",
-    "intro": "There is more to life than experiments and reviewer comments. Here are a few things that make me, me.",
+    "intro": "There is more to life than experiments and reviewer comments. \nHere are a few things that make me, me.",
     "quote": "Curiosity tends to follow me beyond research.",
     "closing": "Always happy to connect about research, music, or baseball.",
     "contactHeading": "Say hello"
@@ -365,13 +365,13 @@
       "icon": "⚾",
       "title": "Samsung Lions",
       "description": "A loyal fan of the Samsung Lions. I love following games, the season’s ups and downs, and the energy of baseball.",
-      "image": "",
+      "image": "assets/kakaotalk-20261027-184418920-mvqi4wfl.jpg",
       "link": ""
     },
     {
       "id": "hob2",
       "icon": "♫",
-      "title": "Alto saxophone & Flute",
+      "title": "Alto Saxophone & Flute",
       "description": "I had played the flute in an orchestra, and can also play alto saxophone. I enjoy the completely different voice and character of the instrument.",
       "image": "",
       "link": ""
@@ -380,7 +380,7 @@
       "id": "idmvqi1035uciv8",
       "icon": "😺",
       "title": "Animals Crossing",
-      "description": "",
+      "description": "I love cutieeeeees!!",
       "image": "assets/kakaotalk-20261027-184418920-04-mvqi2lhv.jpg",
       "link": ""
     }
